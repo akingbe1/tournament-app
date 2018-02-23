@@ -1,0 +1,42 @@
+<div class="row">
+	<div class="column">
+		<h1>Eastern Division</h1>
+		<ul>
+			<li *ngFor="let team of teams"
+			(click)="onTeamClicked(team)">
+			{{ team.name }} 
+			</li>
+
+		</ul>
+		<input type="text" #team>
+		<button (click)="addTeam(team)">Add Team</button>
+	</div>
+	<div class="column">
+		<h1>Western Division</h1>
+		<ul>
+			<li *ngFor="let westernTeam of westernTeams">{{ westernTeam.name }}</li>
+		</ul>
+		<input type="text" #westernTeam>
+		<button (click)="addTeamWest(westernTeam)">Add Team</button>
+	</div>
+	<div class="column">
+		<h1>Northern Division</h1>
+		<ul>
+			<li *ngFor="let northernTeam of northernTeams">{{ northernTeam.name }}</li>
+		</ul>
+		<input type="text" #northernTeam>
+		<button (click)="addTeamNorth(northernTeam)">Add Team</button>
+	</div>
+	<div class="column">
+		<h1>Southern Division</h1>
+		<ul>
+			<li *ngFor="let southernTeam of southernTeams">{{ southernTeam.name }}</li>
+		</ul>
+		<input type="text" #southernTeam>
+		<button (click)="addTeamSouth(southernTeam)">Add Team</button>
+	</div>
+</div>
+
+<div class="bottom">
+	<li *ngFor="let semiFinal of semiFinals">{{ semiFinal.name }}</li>
+</div>

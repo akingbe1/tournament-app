@@ -1,0 +1,16 @@
+.column {
+    float: left;
+    width: 25%;
+}
+
+.bottom {
+	 width: 100%;
+
+     position: fixed;
+
+     bottom: 0px;
+
+     text-align: center;
+
+     /*z-index: 9999;*/
+}
