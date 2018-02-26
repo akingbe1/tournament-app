@@ -12,7 +12,8 @@ export class TournamentTeamsComponent implements OnInit {
 	southernTeams = [];
 	leftSemiFinals = [];
 	rightSemiFinals = [];
-	finals = [];
+	leftFinals = [];
+	rightFinals = [];
 	champion = [];
 
 	selectedTeam = {name: ""};
@@ -54,10 +55,19 @@ export class TournamentTeamsComponent implements OnInit {
   };
 
 
-  onSemiFinalTeamClicked(team) {
-  	this.finals.push(team);
-  	console.log(team);
+
+
+  onLeftSemiFinalTeamClicked(team) {
+  	this.leftFinals.push(team);
+  	console.log(team.name);
   };
+   onRightSemiFinalTeamClicked(team) {
+  	this.rightFinals.push(team);
+  	console.log(team.name);
+  };
+
+
+
   onWinningTeamClicked(team) {
   	this.champion.push(team);
   };

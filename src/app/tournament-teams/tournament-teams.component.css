@@ -9,6 +9,10 @@
 	text-align: center;
 }
 
+.column3 {
+	text-align: center;
+}
+
 .bottom {
 	 width: 100%;
 
@@ -31,4 +35,8 @@ h2.next-round {
 
 h1 {
 	text-align: center;
+}
+
+ul {
+  list-style-type: none;
 }
