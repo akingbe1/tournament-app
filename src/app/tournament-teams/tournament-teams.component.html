@@ -1,9 +1,12 @@
+<div>
+	<h1>Gaming Tournament</h1>
+</div>
 <div class="row">
 	<div class="column">
-		<h1>Eastern Division</h1>
+		<h2 class="first-round">Eastern Division</h2>
 		<ul>
 			<li *ngFor="let team of teams"
-			(click)="onTeamClicked(team)">
+			(click)="onLeftTeamClicked(team)">
 			{{ team.name }} 
 			</li>
 		</ul>
@@ -11,10 +14,10 @@
 		<button (click)="addTeam(team)">Add Team</button>
 	</div>
 	<div class="column">
-		<h1>Western Division</h1>
+		<h2 class="first-round">Western Division</h2>
 		<ul>
 			<li *ngFor="let westernTeam of westernTeams" 
-			(click)="onTeamClicked(westernTeam)">
+			(click)="onLeftTeamClicked(westernTeam)">
 			{{ westernTeam.name }}
 			</li>
 		</ul>
@@ -22,20 +25,20 @@
 		<button (click)="addTeamWest(westernTeam)">Add Team</button>
 	</div>
 	<div class="column">
-		<h1>Northern Division</h1>
+		<h2 class="first-round">Northern Division</h2>
 		<ul>
 			<li *ngFor="let northernTeam of northernTeams"
-			(click)="onTeamClicked(northernTeam)">
+			(click)="onRightTeamClicked(northernTeam)">
 			{{ northernTeam.name }}</li>
 		</ul>
 		<input type="text" #northernTeam>
 		<button (click)="addTeamNorth(northernTeam)">Add Team</button>
 	</div>
 	<div class="column">
-		<h1>Southern Division</h1>
+		<h2 class="first-round">Southern Division</h2>
 		<ul>
 			<li *ngFor="let southernTeam of southernTeams"
-			(click)="onTeamClicked(southernTeam)">
+			(click)="onRightTeamClicked(southernTeam)">
 			{{ southernTeam.name }}</li>
 		</ul>
 		<input type="text" #southernTeam>
@@ -43,19 +46,30 @@
 	</div>
 </div>
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
 
 
-<div>
-	<li *ngFor="let semiFinal of semiFinals"
-		(click)="onSemiFinalTeamClicked(semiFinal)">
-		{{ semiFinal.name }}
-	</li>
+<div class="row">
+	<h2 class="next-round">SemiFinals</h2>
+	<div class="column2">
+		<li *ngFor="let leftSemiFinal of leftSemiFinals"
+			(click)="onSemiFinalTeamClicked(leftSemiFinal)">
+			{{ leftSemiFinal.name }}
+		</li>
+	</div>
+	<div class="column2">
+		<li *ngFor="let rightSemiFinal of rightSemiFinals"
+			(click)="onSemiFinalTeamClicked(rightSemiFinal)">
+			{{ rightSemiFinal.name }}
+		</li>
+	</div>
 </div>
+
 
 <br><br><br><br><br><br><br><br><br><br>
 
 <div>
+	<h2 class="next-round">Finals</h2>
 	<ul>
 		<li *ngFor="let final of finals"
 		(click)="onWinningTeamClicked(final)">

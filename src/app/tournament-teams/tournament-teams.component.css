@@ -3,6 +3,12 @@
     width: 25%;
 }
 
+.column2 {
+	float: left;
+	width: 50%;
+	text-align: center;
+}
+
 .bottom {
 	 width: 100%;
 
@@ -13,4 +19,16 @@
      /*text-align: center;*/
 
      /*z-index: 9999;*/
+}
+
+h2.first-round {
+	color: blue;
+}
+
+h2.next-round {
+	text-align: center;
+}
+
+h1 {
+	text-align: center;
 }
