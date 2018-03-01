@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { HeadingService } from '../service/team-service';
 
 @Component({
   selector: 'app-tournament-teams',
   templateUrl: './tournament-teams.component.html',
-  styleUrls: ['./tournament-teams.component.css']
+  styleUrls: ['./tournament-teams.component.css'],
+  providers: [HeadingService]
 })
 export class TournamentTeamsComponent implements OnInit {
 	teams = [];
@@ -18,12 +20,19 @@ export class TournamentTeamsComponent implements OnInit {
 
 	selectedTeam = {name: ""};
 
+	title:string;
 
-  constructor() { }
+
+   constructor(private _headingService: HeadingService) {
+
+  }
 
   ngOnInit() {
-  
+  	this.title = this._headingService.headingServiceMethod();
   }
+
+
+
   addTeam(team) {
   	this.teams.push({name: team.value});
   	team.value = '';
@@ -71,6 +80,9 @@ export class TournamentTeamsComponent implements OnInit {
   onWinningTeamClicked(team) {
   	this.champion.push(team);
   };
+
+
+
 
 }
 

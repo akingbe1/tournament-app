@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
+import { HeadingService} from './service/team-service';
 
 import { AppComponent } from './app.component';
 import { TournamentTeamsComponent } from './tournament-teams/tournament-teams.component';
@@ -16,7 +16,7 @@ import { TournamentTeamsComponent } from './tournament-teams/tournament-teams.co
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [HeadingService],
   bootstrap: [
   AppComponent,
   TournamentTeamsComponent
