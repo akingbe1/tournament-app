@@ -8,7 +8,7 @@ import { HeadingService } from '../service/team-service';
   providers: [HeadingService]
 })
 export class TournamentTeamsComponent implements OnInit {
-	teams = [];
+	easternTeams = [];
 	westernTeams = [];
 	northernTeams = [];
 	southernTeams = [];
@@ -33,56 +33,88 @@ export class TournamentTeamsComponent implements OnInit {
 
 
 
-  addTeam(team) {
-  	this.teams.push({name: team.value});
-  	team.value = '';
-  };
-  addTeamWest(team) {
-  	console.log(team.value);
-  	this.westernTeams.push({name: team.value});
-  	team.value = '';
-
-  };
-  addTeamNorth(team) {
-  	this.northernTeams.push({name: team.value});
-  	team.value = '';
-  };
-  addTeamSouth(team) {
-  	this.southernTeams.push({name: team.value});
-  	team.value = '';
+  addTeam(team, division) {
+      console.log(team.value);
+      console.log(division);
+      if (division === "east") {
+      this.easternTeams.push({name: team.value});
+    } else if (division === "west") {
+      this.westernTeams.push({name: team.value});
+    } else if (division === "north") {
+      this.northernTeams.push({name: team.value});
+    } else {
+      this.southernTeams.push({name: team.value});
+    }
+      team.value = '';
   };
 
 
-  onLeftTeamClicked(team) {
-  	this.leftSemiFinals.push(team);
-	console.log(team.name);
+  onTeamClicked(team, side) {
+    if (side === "left") {
+      this.leftSemiFinals.push(team);
+    } else {
+      this.rightSemiFinals.push(team);
+    }
   };
 
-   onRightTeamClicked(team) {
-  	this.rightSemiFinals.push(team);
-	console.log(team.name);
+  onSemiFinalsTeamClicked(team, side) {
+    if (side === "left") {
+      this.leftFinals.push(team);
+    } else {
+      this.rightFinals.push(team);
+    }
   };
-
-
-
-
-  onLeftSemiFinalTeamClicked(team) {
-  	this.leftFinals.push(team);
-  	console.log(team.name);
-  };
-   onRightSemiFinalTeamClicked(team) {
-  	this.rightFinals.push(team);
-  	console.log(team.name);
-  };
-
-
 
   onWinningTeamClicked(team) {
-  	this.champion.push(team);
+    this.champion.push(team);
   };
 
+  // addTeamNorth(team) {
+  // 	this.northernTeams.push({name: team.value});
+  // 	team.value = '';
+  // };
+  // addTeamSouth(team) {
+  // 	this.southernTeams.push({name: team.value});
+  // 	team.value = '';
+  // };
+
+
+ //  onLeftTeamClicked(team) {
+ //  	this.leftSemiFinals.push(team);
+	// console.log(team.name);
+ //  };
+
+ //   onRightTeamClicked(team) {
+ //  	this.rightSemiFinals.push(team);
+	// console.log(team.name);
+ //  };
 
 
 
-}
+
+  
+
+
+
+  // onLeftSemiFinalTeamClicked(team) {
+  // 	this.leftFinals.push(team);
+  // 	console.log(team.name);
+  // };
+  //  onRightSemiFinalTeamClicked(team) {
+  // 	this.rightFinals.push(team);
+  // 	console.log(team.name);
+  // };
+
+
+
+ 
+
+
+
+
+
+
+
+
+
 

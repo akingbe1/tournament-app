@@ -6,44 +6,44 @@
 	<div class="column">
 		<h2 class="first-round">Eastern Division</h2>
 		<ul>
-			<li *ngFor="let team of teams"
-			(click)="onLeftTeamClicked(team)">
-			{{ team.name }} 
+			<li *ngFor="let easternTeam of easternTeams"
+			(click)="onTeamClicked(easternTeam, 'left')">
+			{{ easternTeam.name }} 
 			</li>
 		</ul>
-		<input type="text" #team>
-		<button (click)="addTeam(team)">Add Team</button>
+		<input type="text" #east>
+		<button (click)="addTeam(east, 'east')">Add Team</button>
 	</div>
 	<div class="column">
 		<h2 class="first-round">Western Division</h2>
 		<ul>
 			<li *ngFor="let westernTeam of westernTeams" 
-			(click)="onLeftTeamClicked(westernTeam)">
+			(click)="onTeamClicked(westernTeam, 'left')">
 			{{ westernTeam.name }}
 			</li>
 		</ul>
-		<input type="text" #westernTeam>
-		<button (click)="addTeamWest(westernTeam)">Add Team</button>
+		<input type="text" #west>
+		<button (click)="addTeam(west, 'west')">Add Team</button>
 	</div>
 	<div class="column">
 		<h2 class="first-round">Northern Division</h2>
 		<ul>
 			<li *ngFor="let northernTeam of northernTeams"
-			(click)="onRightTeamClicked(northernTeam)">
+			(click)="onTeamClicked(northernTeam, 'right')">
 			{{ northernTeam.name }}</li>
 		</ul>
-		<input type="text" #northernTeam>
-		<button (click)="addTeamNorth(northernTeam)">Add Team</button>
+		<input type="text" #north>
+		<button (click)="addTeam(north, 'north')">Add Team</button>
 	</div>
 	<div class="column">
 		<h2 class="first-round">Southern Division</h2>
 		<ul>
 			<li *ngFor="let southernTeam of southernTeams"
-			(click)="onRightTeamClicked(southernTeam)">
+			(click)="onTeamClicked(southernTeam, 'right')">
 			{{ southernTeam.name }}</li>
 		</ul>
-		<input type="text" #southernTeam>
-		<button (click)="addTeamSouth(southernTeam)">Add Team</button>
+		<input type="text" #south>
+		<button (click)="addTeam(south, 'south')">Add Team</button>
 	</div>
 </div>
 
@@ -55,7 +55,7 @@
 	<div class="column2">
 		<ul>
 			<li *ngFor="let leftSemiFinal of leftSemiFinals"
-				(click)="onLeftSemiFinalTeamClicked(leftSemiFinal)">
+				(click)="onSemiFinalsTeamClicked(leftSemiFinal, 'left')">
 				{{ leftSemiFinal.name }}
 			</li>
 		</ul>
@@ -63,7 +63,7 @@
 	<div class="column2">
 		<ul>
 			<li *ngFor="let rightSemiFinal of rightSemiFinals"
-				(click)="onRightSemiFinalTeamClicked(rightSemiFinal)">
+				(click)="onSemiFinalsTeamClicked(rightSemiFinal, 'right')">
 				{{ rightSemiFinal.name }}
 			</li>
 		</ul>
